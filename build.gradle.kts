@@ -1,6 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.9.20"
-    application
+    kotlin("jvm") apply false
 }
 
 group = "ru.otus"
@@ -10,18 +9,11 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation(kotlin("test"))
-}
+subprojects{
+    group = rootProject.group
+    version = rootProject.version
 
-tasks.test {
-    useJUnitPlatform()
-}
-
-kotlin {
-    jvmToolchain(8)
-}
-
-application {
-    mainClass.set("MainKt")
+    repositories {
+        mavenCentral()
+    }
 }

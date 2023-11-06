@@ -1,3 +1,5 @@
+package ru.otus.otusKotlin
+
 fun main(args: Array<String>) {
     println("Hello World!")
 
